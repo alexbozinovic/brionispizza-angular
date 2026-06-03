@@ -5,6 +5,13 @@
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
 
 html {
   @include mat.theme((
@@ -12,7 +19,7 @@ html {
       primary: mat.$magenta-palette,
       tertiary: mat.$violet-palette,
     ),
-    typography: Roboto,
+    typography: 'Josefin Sans, sans-serif',
     density: 0,
   ));
 }
@@ -39,5 +46,16 @@ mat-form-field {
   width: 100%;
 }
 
+button[mat-button] {
+  --mat-button-text-label-text-color: black;
+  --mat-button-text-state-layer-color: #808080;
+  --mat-button-text-hover-state-layer-opacity: 0.2;
+  --mat-button-text-ripple-color: rgba(180, 180, 180, 0.3);
+}
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "Josefin Sans", sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Zilla Slab', sans-serif;
+}

@@ -1,10 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule, RouterLink],
+  imports: [
+    CommonModule, 
+    RouterLink,
+    MatButtonModule
+  ],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
