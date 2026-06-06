@@ -6,6 +6,7 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('./app/shared/styles/_colors.scss');
 
 *,
 *:before,
@@ -58,4 +59,15 @@ body { margin: 0; font-family: "Josefin Sans", sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Zilla Slab', sans-serif;
+}
+
+a, a:visited{
+  color: var(--sauce-400);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 5px;
+}
+
+a:hover, a:active {
+  color: var(--sauce-600);
 }
