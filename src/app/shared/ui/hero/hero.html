@@ -14,8 +14,8 @@
                             <mat-icon>phone</mat-icon>
                         </div>
                         <div class="contact-item contact-grid-info">
-                            <div class="mobile-phone"><a href="tel:+15864680700">(586) 468-0700</a></div>
-                            <div class="landline-phone">(586) 468-0700</div>
+                            <div class="mobile-phone"><a href="tel:+15864680700">{{ metaStore.state().phone }}</a></div>
+                            <div class="landline-phone">{{ metaStore.state()?.phone }}</div>
                         </div>
                     </div>
                 </div>
@@ -27,11 +27,11 @@
                         </div>
                         <div class="contact-item contact-grid-info">
                             <a 
-                                href="https://maps.app.goo.gl/CReca2SjqRAdsLhV6"
+                                [href]="metaStore.state()?.address?.map"
                                 target="_blank"
                             >
-                                36643 Jefferson Ave.<br>
-                                Harrison Township, MI 48045
+                                {{ metaStore.state()?.address?.street }}<br>
+                                {{ metaStore.state()?.address?.city }}, {{ metaStore.state()?.address?.state }} {{ metaStore.state()?.address?.zip }}
                             </a>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
         >
             <mat-card-content>
                 <div class="about-content">
-                    Since 2003, Brioni's Pizzeria has been making traditional and Detroit-style pizzas with fresh ingredients and no shortcuts. Our reputation is built on consistency, and our loyal customers know they can count on us for a solid slice every time.
+                    {{ metaStore.state()?.description?.home }}
                 </div>
             </mat-card-content>
         </mat-card>

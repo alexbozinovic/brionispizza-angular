@@ -1,4 +1,4 @@
-class Meta {
+export class Meta {
     phone = "(586) 468-0700";
 
     address = {
