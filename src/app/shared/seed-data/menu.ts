@@ -1,4 +1,4 @@
-class Menu {
+export class Menu {
     daily = {
         sides: {
             label: "Side Orders",
