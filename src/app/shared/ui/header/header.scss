@@ -1,0 +1,38 @@
+:host{
+    display: block;
+    width: 100%; 
+}
+
+header{
+    width: 100%;
+    padding: 28px;
+}
+
+nav{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 32px;
+}
+
+.menu1{
+    justify-content: right;
+}
+
+.menu1,
+.menu2{
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    img{
+        width: 100%;
+        max-width: 150px;
+        height: auto;
+    }
+}
+
+.main-menu-button{
+    font-size: 1rem;
+    font-weight: 500;
+}
