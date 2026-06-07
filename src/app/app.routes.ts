@@ -4,6 +4,7 @@ export const routes: Routes = [
     {
         path: '',
         loadComponent: () => import('./home/home').then(c => c.Home),
+        loadChildren: () => import('./home/home.routes').then(c => c.HomeRoutes),
         title: 'Brionis Pizza',
     },
     {

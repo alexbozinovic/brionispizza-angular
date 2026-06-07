@@ -11,7 +11,9 @@ const FIRE_CONFIG = [
     provideAuth(() => {
       const auth = getAuth();
       if (!environment.production) {
-        connectAuthEmulator(auth, 'http://localhost:9099');
+        connectAuthEmulator(auth, 'http://localhost:9099', {
+          disableWarnings: true
+        });
       }
       return auth;
     }),
