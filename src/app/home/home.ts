@@ -1,18 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { Header } from '../shared/ui/header/header';
-import { HeroComponent } from '../shared/ui/hero/hero';
 import { FirestoreService } from '../shared/services/firestore.service';
 import { Observable } from 'rxjs';
 import { UserModel } from '../shared/models/user.model';
 import { Timestamp } from '@angular/fire/firestore';
+import { RouterOutlet } from '@angular/router';
+import { Footer } from '../shared/ui/footer/footer';
 
 @Component({
   selector: 'app-home',
   imports: [
     CommonModule, 
-    Header, 
-    HeroComponent,
+    Header,
+    Footer,
+    RouterOutlet
   ],
   templateUrl: './home.html',
   styleUrls: ['./home.scss'],

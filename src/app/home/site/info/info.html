@@ -1,0 +1,38 @@
+<div class="info-page-container">
+    <div class="info-page-content">
+        <h1>About</h1>
+        @for(p of metaStore.state()?.description?.about; track $index ){
+            <p>{{ p }}</p>
+        }
+    </div>
+    <div class="info-page-sidebar">
+        <div class="info-page-sidebar-item">
+            <h2>Contact Us</h2> 
+            <div class="contact-row">
+                <div class="contact-icon">
+                    <mat-icon>phone</mat-icon>
+                </div>
+                <div class="contact-info">{{ metaStore.state()?.phone }}</div>
+            </div>
+            <div class="contact-row">
+                <div class="contact-icon">
+                    <mat-icon>location_on</mat-icon>
+                </div>
+                <div class="contact-info">
+                    {{ metaStore.state()?.address.street }}<br>
+                    {{ metaStore.state()?.address.city }}, {{ metaStore.state()?.address.state }} {{ metaStore.state()?.address.zip }}
+                </div>
+            </div>
+        </div>
+
+        <div class="info-page-sidebar-item">
+            <h2>Hours</h2>
+            <div class="contact-container">
+                @for(day of metaStore.state()?.hours; track $index){
+                    <div class="contact-day">{{ day.day }}</div>
+                    <div class="contact-time">{{ day.time }}</div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

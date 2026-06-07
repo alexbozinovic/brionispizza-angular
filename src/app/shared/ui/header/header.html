@@ -2,9 +2,13 @@
     <nav>
         <div class="menu1">
             <button
+                [matMenuTriggerFor]="menus"
                 class="main-menu-button"
-                mat-button
-            >Menus</button>
+                matButton
+            ><mat-icon>arrow_drop_down</mat-icon> Menus</button>
+            <mat-menu #menus="matMenu">
+                
+            </mat-menu>
         </div>
         <div class="logo">
             <a routerLink=""><img src="/images/brionis_full_logo.png"></a>
@@ -12,7 +16,8 @@
         <div class="menu2">
             <button
                 class="main-menu-button"
-                mat-button
+                routerLink="info"
+                matButton
             >Info</button>
         </div>
     </nav>
