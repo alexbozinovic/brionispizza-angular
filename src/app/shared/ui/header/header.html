@@ -7,7 +7,9 @@
                 matButton
             ><mat-icon>arrow_drop_down</mat-icon> Menus</button>
             <mat-menu #menus="matMenu">
-                
+                <button mat-menu-item routerLink="menus/menu">Daily Menu</button>
+                <button mat-menu-item routerLink="menus/catering">Catering Menu</button>
+                <button mat-menu-item routerLink="menus/specials">Specials Menu</button>
             </mat-menu>
         </div>
         <div class="logo">
@@ -16,8 +18,8 @@
         <div class="menu2">
             <button
                 class="main-menu-button"
-                routerLink="info"
-                matButton
+                routerLink="info" 
+                matButton 
             >Info</button>
         </div>
     </nav>

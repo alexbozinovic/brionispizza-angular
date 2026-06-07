@@ -13,6 +13,11 @@ export const HomeRoutes: Routes = [
         title: 'Brioni\'s Pizza - About'
     },
     {
+        path: 'menus',
+        loadChildren: () => import('./site/menus/menus.routes').then(m => m.MENUS_ROUTES),
+        title: 'Brioni\'s Pizza - Menus'
+    },
+    {
         path: '',
         pathMatch: 'full',
         redirectTo: ''
