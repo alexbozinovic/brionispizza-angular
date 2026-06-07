@@ -19,8 +19,8 @@
                     <mat-icon>location_on</mat-icon>
                 </div>
                 <div class="contact-info">
-                    {{ metaStore.state()?.address.street }}<br>
-                    {{ metaStore.state()?.address.city }}, {{ metaStore.state()?.address.state }} {{ metaStore.state()?.address.zip }}
+                    {{ metaStore.state()?.address?.street }}<br>
+                    {{ metaStore.state()?.address?.city }}, {{ metaStore.state()?.address?.state }} {{ metaStore.state()?.address?.zip }}
                 </div>
             </div>
         </div>
@@ -29,8 +29,8 @@
             <h2>Hours</h2>
             <div class="contact-container">
                 @for(day of metaStore.state()?.hours; track $index){
-                    <div class="contact-day">{{ day.day }}</div>
-                    <div class="contact-time">{{ day.time }}</div>
+                    <div class="contact-day">{{ day?.day }}</div>
+                    <div class="contact-time">{{ day?.time }}</div>
                 }
             </div>
         </div>

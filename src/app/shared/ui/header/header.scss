@@ -22,6 +22,10 @@ nav{
     div:last-child{
         justify-content: left;
     }
+
+    @media only screen and (max-width: 430px){
+        grid-template-columns: 100px 1fr 100px;
+    }
 }
 
 .menu1{

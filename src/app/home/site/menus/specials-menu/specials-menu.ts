@@ -20,13 +20,13 @@ export class SpecialsMenu {
   private fbase = inject(FirestoreService);
   private specials$ = this.fbase.streamDocument<{ id: string; menus: any }>('site', 'food');
 
-  private _specials = signal<object>({});
+  private _specials = signal<object>([]);
   protected specials = computed<SpecialMenuModel[]>(() => this._specials() as SpecialMenuModel[]);
 
   constructor() {
     this.specials$.subscribe((data) => {
-      const specials = data.menus.find( (f: any) => f.label === 'Specials Menu');
-      this._specials.set(specials.menu);
+      const tempSpecials = data?.menus.find( (f: any) => f.label === 'Specials Menu');
+      this._specials.set(tempSpecials?.menu || {});
     });
   }
 }

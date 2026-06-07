@@ -1,1 +1,17 @@
-<p>daily-menu works!</p>
+<div class="daily-menu-container">
+    <h1>
+        <span [class.gray-font]="menuStore.state().breadcrumb">Daily Menu</span>
+
+        @if( menuStore.state().breadcrumb ){
+            <span class="breadcrumb"> / {{ menuStore.state().breadcrumb }}</span>
+        }
+    </h1>
+
+    <div class="menu-navigation">
+        @for(item of menuItems(); track $index ){
+            <button mat-button type="button" [routerLink]="`${item?.route}`">{{ item?.label }}</button>
+        }
+    </div>
+
+    <router-outlet></router-outlet>
+</div>

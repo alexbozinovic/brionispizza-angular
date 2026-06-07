@@ -1,15 +1,19 @@
-<div class="specials-wrapper">
-    @for(special of specials(); track $index){
-        <div class="card-wrapper">
-            <mat-card class="special-card">
-                <mat-card-header class="special-header">
-                    <mat-card-title>{{ special.special }}</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <div class="special-price">{{ special.price }}</div>
-                    <div class="special-disclaimer">{{ special.disclaimer }}</div>
-                </mat-card-content>
-            </mat-card>
-        </div>
-    }
+<div class="specials-container">
+    <h1>Specials Menu</h1>
+
+    <div class="specials-wrapper">
+        @for(special of specials(); track $index){
+            <div class="card-wrapper">
+                <mat-card class="special-card">
+                    <mat-card-header class="special-header">
+                        <mat-card-title>{{ special?.special }}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div class="special-price">{{ special?.price }}</div>
+                        <div class="special-disclaimer">{{ special?.disclaimer }}</div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        }
+    </div>
 </div>

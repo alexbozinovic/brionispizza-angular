@@ -1,10 +1,13 @@
 import { Routes } from "@angular/router";
+import { MenuStore } from "./daily-menu/menus/store/menu.store";
 
 export const MENUS_ROUTES: Routes = [
     {
         path: 'menu',
         loadComponent: () => import('./daily-menu/daily-menu').then(m => m.DailyMenu),
-        title: "Brioni's Pizza - Daily Menu"
+        loadChildren: () => import('./daily-menu/daily-menu.routes').then(m => m.DailyMenuRoutes),
+        title: "Brioni's Pizza - Daily Menu",
+        providers: [MenuStore]
     },
     {
         path: 'catering',
