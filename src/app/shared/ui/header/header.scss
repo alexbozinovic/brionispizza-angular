@@ -11,8 +11,17 @@ header{
 
 nav{
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 32px;
+    grid-template-columns: 125px 150px 125px;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+
+    div:first-child{
+        justify-content: right;
+    }
+    div:last-child{
+        justify-content: left;
+    }
 }
 
 .menu1{

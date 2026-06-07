@@ -987,34 +987,6 @@ export class Menu {
             position: 1,
             route: 'catering-menu',
             menu: [
-                {
-                    special: "Medium Pizza w/ 1 item",
-                    price: "$12.80",
-                    disclaimer: "Plus Tax. Limited Time Offer. Extra Charge for Delivery."
-                },
-                {
-                    special: "Large Pizza w/ 1 item",
-                    price: "$15.19",
-                    disclaimer: "Plus Tax. Limited Time Offer. Extra Charge for Delivery."
-                },
-                {
-                    special: "XXL Pizza w/ 1 item",
-                    price: "$19.84",
-                    disclaimer: "Plus Tax. Limited Time Offer. Extra Charge for Delivery."
-                },
-                {
-                    special: "Large Pizza w/ 1 item",
-                    description: "Small Antipasto, Greek, or Chef Salad, Large Brioni's Bread",
-                    price: "$29.47",
-                    disclaimer: "Plus Tax. Limited Time Offer. Extra Charge for Delivery."
-                }
-            ]
-        },
-        {
-            label: "Specials Menu",
-            position: 2,
-            route: 'specials-menu',
-            menu: [
                 {   
                     label: "Party Subs",
                     items: [
@@ -1192,6 +1164,34 @@ export class Menu {
                     ]
                 }
             ]
+        },
+        {
+            label: "Specials Menu",
+            position: 2,
+            route: 'specials-menu',
+            menu: [
+                {
+                    special: "Medium Pizza w/ 1 item",
+                    price: "$12.80",
+                    disclaimer: "Plus Tax. Limited Time Offer. Extra Charge for Delivery."
+                },
+                {
+                    special: "Large Pizza w/ 1 item",
+                    price: "$15.19",
+                    disclaimer: "Plus Tax. Limited Time Offer. Extra Charge for Delivery."
+                },
+                {
+                    special: "XXL Pizza w/ 1 item",
+                    price: "$19.84",
+                    disclaimer: "Plus Tax. Limited Time Offer. Extra Charge for Delivery."
+                },
+                {
+                    special: "Large Pizza w/ 1 item",
+                    description: "Small Antipasto, Greek, or Chef Salad, Large Brioni's Bread",
+                    price: "$29.47",
+                    disclaimer: "Plus Tax. Limited Time Offer. Extra Charge for Delivery."
+                }
+            ],
         },
     ]
 }
