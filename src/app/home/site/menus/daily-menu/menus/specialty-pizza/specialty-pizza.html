@@ -1,1 +1,29 @@
-<p>specialty-pizza works!</p>
+<!-- <div class="pizza-menu-container">
+    @if( specialtyPizza().toppings ){
+        <div class="toppings">
+            <h3>Toppings</h3>
+            <div class="toppings-list">
+                {{ specialtyPizza().toppings }}
+            </div>
+        </div>
+    }
+</div> -->
+
+<div class="pizza-menu-wrapper">
+    @for(item of specialtyPizza().items; track $index){
+        <div class="pizza-menu-item">
+            <div class="pizza-item-label">{{ item?.item }}</div>
+            <div class="pizza-item-toppings">{{ item?.toppings }}</div>
+            <div class="pizza-item-prices">
+                @for( info of item.info; track info.size){
+                    <div class="pizza-item-price-container">
+                        <div class="pizza-item-size">{{ info.size }}</div>
+                        <div class="pizza-item-price">{{ info.price }}</div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+<div class="menu-spacing">&nbsp;</div>

@@ -1,13 +1,15 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { FirestoreService } from '../../../../../../shared/services/firestore.service';
 import { map, take } from 'rxjs';
-import { PizzaModel } from './models/pizza.mode';
+import { PizzaModel } from './models/pizza.model';
 import { MenuStore } from '../store/menu.store';
-import { JsonPipe } from '@angular/common';
+// import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-pizza',
-  imports: [JsonPipe],
+  imports: [
+    // JsonPipe
+  ],
   templateUrl: './pizza.html',
   styleUrl: './pizza.scss',
 })

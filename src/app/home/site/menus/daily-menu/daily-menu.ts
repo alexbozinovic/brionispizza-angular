@@ -1,6 +1,6 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { FirestoreService } from '../../../../shared/services/firestore.service';
-import { RouterLink, RouterOutlet, Routes } from '@angular/router';
+import { RouterLink, RouterOutlet, RouterLinkActive } from '@angular/router';
 import { MenuStore } from './menus/store/menu.store';
 import { MatButtonModule } from '@angular/material/button';
 import { DailyMenuRoutes } from './daily-menu.routes';
@@ -10,6 +10,7 @@ import { DailyMenuRoutes } from './daily-menu.routes';
   imports: [
     RouterOutlet,
     RouterLink,
+    RouterLinkActive,
     MatButtonModule
   ],
   templateUrl: './daily-menu.html',
@@ -26,6 +27,6 @@ export class DailyMenu {
 
   constructor() {
     this._menuItems.set( this.menuRoutes.map( (m: any) => m.data) );
-    console.log(this.menuItems());
+    // console.log(this.menuItems());
   }
 }
