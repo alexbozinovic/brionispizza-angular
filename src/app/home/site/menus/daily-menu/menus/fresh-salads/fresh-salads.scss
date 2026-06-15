@@ -5,22 +5,18 @@
 }
 
 .fresh-salads-wrapper{
-    width: 700px;
-
-    @media only screen and (max-width: 430px){
-        width: 100%;
-    }
+    width: 100%;
 }
 
 .fresh-salads-row{
     display: grid;
-    grid-template-columns: 1fr 250px;
+    grid-template-columns: 1fr 200px;
     padding: 16px;
 
     .prices{
         display: grid;
-        grid-template-columns: 33% 33% 34%;
-        gap: 16px;
+        grid-template-columns: 32% 33% 33%;
+        gap: 1%;
     }
 
     @media only screen and (max-width: 430px){
