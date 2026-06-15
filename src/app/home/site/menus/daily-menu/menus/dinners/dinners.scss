@@ -1,0 +1,43 @@
+:host{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.dinners-wrapper{
+    width: 100%;
+}
+
+.dinners-row{
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.dinners-row:not(.dinners-header){
+    border: 1px solid var(--gray-400);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.dinners-header{ 
+    font-weight: bold; 
+    margin-bottom: 8px;
+    padding: 0 16px;
+}
+
+.hide{
+    @media only screen and (max-width: 430px){
+        display: none;
+    }
+}
+
+.mobile-label{
+    display: none;
+
+    @media only screen and (max-width: 430px){
+        display: block;
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+}
