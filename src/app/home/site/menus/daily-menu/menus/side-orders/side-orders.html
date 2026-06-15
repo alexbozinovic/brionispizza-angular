@@ -1,1 +1,20 @@
-<p>side-orders works!</p>
+<div class="side-order-wrapper">
+    <div class="side-order-row side-order-header">
+        <div class="label">&nbsp;</div>
+        <div class="price">
+            <div class="small">Small</div>
+            <div class="large">Large</div>
+        </div>
+    </div>
+    @for(side of items(); track $index){
+        <div class="side-order-row">
+            <div class="label">
+                {{ side.item }}
+            </div>
+            <div class="price">
+                <div class="small">{{ getPrice('small', side.info) }}</div>
+                <div class="large">{{ getPrice('large', side.info) }}</div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,1 +1,33 @@
-<p>fresh-salads works!</p>
+<div class="fresh-salads-wrapper">
+    <div class="fresh-salads-row fresh-salads-header">
+        <div class="label">&nbsp;</div>
+        <div class="prices">
+            <div class="personal">Personal</div>
+            <div class="small">Small</div>
+            <div class="large">Large</div>
+        </div>
+    </div>
+
+    @for(salad of salads(); track $index) {
+        <div class="fresh-salads-row">
+            <div class="item">
+                <div class="label">{{ salad.item }}</div>
+                <div class="description">{{ salad.toppings }}</div>
+            </div>
+            <div class="prices">
+                <div class="personal">
+                    <div class="mobile-header">Personal</div>
+                    <div class="item-price">{{ getPrice(salad.info, 'personal') }}</div>
+                </div>
+                <div class="small">
+                    <div class="mobile-header">Small</div>
+                    <div class="item-price">{{ getPrice(salad.info, 'small') }}</div>
+                </div>
+                <div class="large">
+                    <div class="mobile-header">Large</div>
+                    <div class="item-price">{{ getPrice(salad.info, 'large') }}</div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
