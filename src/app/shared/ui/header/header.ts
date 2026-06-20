@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
@@ -18,15 +18,17 @@ import { FirestoreService } from '../../services/firestore.service';
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
-export class Header {
+export class Header implements OnInit {
   private fbase = inject(FirestoreService);
 
   private _mainMenus = signal<{ label: string; route: string; }[]>([]);
   protected mainMenus = computed(() => this._mainMenus());
 
-  constructor() {
+  constructor() {}
+
+  ngOnInit(): void {
     this.fbase.streamDocument<any>('site', 'food', 'prod').subscribe((data) => {
-      this._mainMenus.set( data.menus.map( (f: any) => ({ label: f.label, route: f.route })) );
+      this._mainMenus.set( data?.menus.map( (f: any) => ({ label: f.label, route: f.route })) );
     });
   }
 }
