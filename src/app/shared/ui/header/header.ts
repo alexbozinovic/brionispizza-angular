@@ -25,7 +25,7 @@ export class Header {
   protected mainMenus = computed(() => this._mainMenus());
 
   constructor() {
-    this.fbase.streamDocument<any>('site', 'food').subscribe((data) => {
+    this.fbase.streamDocument<any>('site', 'food', 'prod').subscribe((data) => {
       this._mainMenus.set( data.menus.map( (f: any) => ({ label: f.label, route: f.route })) );
     });
   }
