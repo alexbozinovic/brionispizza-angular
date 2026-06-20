@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideFirebaseApp, initializeApp, getApp } from '@angular/fire/app';
 import { provideAuth, connectAuthEmulator, getAuth } from '@angular/fire/auth';
 import { provideFirestore, connectFirestoreEmulator, getFirestore } from '@angular/fire/firestore';
 import { provideStorage, connectStorageEmulator, getStorage } from '@angular/fire/storage';
@@ -33,7 +33,14 @@ const FIRE_CONFIG = [
     }),
 ]
 
+const FIRE_PROD_CONFIG = [
+  provideFirebaseApp(() => initializeApp(environment.fireConfig, '[PROD]')),
+  provideAuth(() => getAuth(getApp('[PROD]'))),
+  provideFirestore(() => getFirestore(getApp('[PROD]'))),
+  provideStorage(() => getStorage(getApp('[PROD]'))),
+]
+
 @NgModule({
-  providers: [ ...FIRE_CONFIG ],
+  providers: [ ...FIRE_CONFIG, ...FIRE_PROD_CONFIG ],
 })
 export class FirebaseModule {}

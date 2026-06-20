@@ -2,9 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { Header } from '../shared/ui/header/header';
 import { FirestoreService } from '../shared/services/firestore.service';
-import { Observable } from 'rxjs';
-import { UserModel } from '../shared/models/user.model';
-import { Timestamp } from '@angular/fire/firestore';
 import { RouterOutlet } from '@angular/router';
 import { Footer } from '../shared/ui/footer/footer';
 
@@ -22,25 +19,7 @@ import { Footer } from '../shared/ui/footer/footer';
 export class Home implements OnInit {
   private firestoreService = inject(FirestoreService);
 
-  users$!: Observable<UserModel[]>;
-
-  testSetUser() {
-    const testUser: UserModel = {
-      uid: '',
-      displayName: 'Added Test User',
-      email: 'added-test@tester.test',
-      isAdmin: false,
-      isDev: false,
-      isEditor: false,
-      createdOn: Timestamp.now()
-    };
-
-    this.firestoreService.addDocument('users', testUser, 'uid'); 
-  }
-
   constructor() {}
 
-  ngOnInit(): void {
-    this.users$ = this.firestoreService.streamCollection<UserModel>('users');
-  } 
+  ngOnInit(): void { } 
 }
