@@ -28,7 +28,7 @@ export class FirestoreService {
 
     streamCollection<T extends { id?: string }>(collectionName: string, instance?: InstanceType): Observable<T[]> {
         return runInInjectionContext(this.injector, () => {
-          const instanceChosen = instance === 'prod' ? this.instances.find(f => f.app.name === '[PROD]') : instance === 'dev' ? this.firestore : this.firestore;
+          const instanceChosen = this.firestore;
 
           if( !instanceChosen ) {
             throw new Error(`Firestore instance for '${instance}' not found.`);
@@ -41,7 +41,7 @@ export class FirestoreService {
 
     streamDocument<T extends { id?: string }>(collectionName: string, documentId: string, instance?: InstanceType): Observable<T> {
         return runInInjectionContext(this.injector, () => {
-          const instanceChosen = instance === 'prod' ? this.instances.find(f => f.app.name === '[PROD]') : instance === 'dev' ? this.firestore : this.firestore;
+          const instanceChosen = this.firestore;
 
           if( !instanceChosen ) {
             throw new Error(`Firestore instance for '${instance}' not found.`);
@@ -55,7 +55,7 @@ export class FirestoreService {
 
     async addDocument<T extends object>(collectionName: string, data: T, idKey?: string, instance?: InstanceType): Promise<DocumentReference<T>> {
       return runInInjectionContext(this.injector, async () => {
-        const instanceChosen = instance === 'prod' ? this.instances.find(f => f.app.name === '[PROD]') : instance === 'dev' ? this.firestore : this.firestore;
+        const instanceChosen = this.firestore;
 
         if( !instanceChosen ) {
           throw new Error(`Firestore instance for '${instance}' not found.`);
@@ -72,7 +72,7 @@ export class FirestoreService {
 
     updateDocument<T extends object>(collectionName: string, documentId: string, data: Partial<T>, instance?: InstanceType) {
       return runInInjectionContext(this.injector, () => {
-        const instanceChosen = instance === 'prod' ? this.instances.find(f => f.app.name === '[PROD]') : instance === 'dev' ? this.firestore : this.firestore;
+        const instanceChosen = this.firestore;
 
         if( !instanceChosen ) {
           throw new Error(`Firestore instance for '${instance}' not found.`);
@@ -89,7 +89,7 @@ export class FirestoreService {
 
     deleteDocument(collectionName: string, documentId: string, instance?: InstanceType){
       return runInInjectionContext(this.injector, () => {
-        const instanceChosen = instance === 'prod' ? this.instances.find(f => f.app.name === '[PROD]') : instance === 'dev' ? this.firestore : this.firestore;
+        const instanceChosen = this.firestore;
 
         if( !instanceChosen ) {
           throw new Error(`Firestore instance for '${instance}' not found.`);
@@ -106,7 +106,7 @@ export class FirestoreService {
 
     setDocument<T extends object>(collectionName: string, documentId: string, data: T, merge?: boolean, instance?: InstanceType){
       return runInInjectionContext(this.injector, () => {
-        const instanceChosen = instance === 'prod' ? this.instances.find(f => f.app.name === '[PROD]') : instance === 'dev' ? this.firestore : this.firestore;
+        const instanceChosen = this.firestore;
 
         if( !instanceChosen ) {
           throw new Error(`Firestore instance for '${instance}' not found.`);
