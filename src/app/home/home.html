@@ -1,3 +1,7 @@
+@if( appTriggers.state().isSpinnerVisible) {
+    <loading-spinner></loading-spinner>
+}
+
 <app-header></app-header>
 <section>
     <router-outlet></router-outlet>

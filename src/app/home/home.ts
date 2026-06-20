@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { Header } from '../shared/ui/header/header';
-import { FirestoreService } from '../shared/services/firestore.service';
 import { RouterOutlet } from '@angular/router';
 import { Footer } from '../shared/ui/footer/footer';
+import { AppTriggersStore } from '../shared/stores/app-triggers.store';
+import { LoadingSpinner } from '../shared/ui/loading-spinner/loading-spinner.ui';
 
 @Component({
   selector: 'app-home',
@@ -11,15 +12,18 @@ import { Footer } from '../shared/ui/footer/footer';
     CommonModule, 
     Header,
     Footer,
-    RouterOutlet
+    RouterOutlet,
+    LoadingSpinner
   ],
   templateUrl: './home.html',
   styleUrls: ['./home.scss'],
 })
 export class Home implements OnInit {
-  private firestoreService = inject(FirestoreService);
+  protected appTriggers = inject(AppTriggersStore);
 
   constructor() {}
 
-  ngOnInit(): void { } 
+  ngOnInit(): void {
+      this.appTriggers.set('isSpinnerVisible', true);
+  } 
 }
