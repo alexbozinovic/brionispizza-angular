@@ -28,6 +28,10 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
         justify-content: center;
         height: 100%;
     }
+
+    ::ng-deep .mat-mdc-progress-spinner svg circle {
+        stroke: var(--pepper-600);
+    }
   `
 })
 export class LoadingSpinner {}
