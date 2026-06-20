@@ -31,3 +31,11 @@
     background-color: var(--gray-200);
     color: var(--sauce-400);
 }
+
+.nav-item{
+    margin-right: 8px; 
+
+    &:last-child{
+        margin-right: 0;
+    }
+}

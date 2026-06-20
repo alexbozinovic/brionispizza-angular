@@ -1,1 +1,37 @@
-<p>pasta-dishes works!</p>
+<div class="pasta-dish-wrapper">
+    <div class="pasta-dish-grid-row pasta-dish-grid-header-row">
+        <div class="pasta-header-placeholder">
+            <div class="pasta-column pasta-column-description">*{{ pastaDescription() }}</div>
+        </div>
+        <div class="pasta-header-sizes">
+            <div class="pasta-column">
+                Small
+            </div>
+            <div class="pasta-column">
+                Large
+            </div>
+        </div>
+    </div>
+    <div class="pasta-dish-grid">
+            @for(pastaDish of pastaDishes(); track $index){
+                <div class="pasta-dish-grid-row pasta-dish-grid-item-row">
+                    <div class="pasta-dish-label">
+                        <div class="pasta-dish-item-label">
+                            {{ pastaDish.item }}
+                        </div>
+                        <div class="pasta-dish-item-description">
+                            {{ pastaDish.toppings }}
+                        </div>
+                    </div>
+                    <div class="pasta-dish-prices">
+                        @for(size of pastaDish.info; track $index){
+                            <div class="pasta-column">
+                                <div class="mobile-header">{{ size.size.toUpperCase() }}</div>
+                                {{ size.price }}
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>

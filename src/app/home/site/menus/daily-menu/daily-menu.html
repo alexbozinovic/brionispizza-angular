@@ -9,7 +9,7 @@
 
     <div class="menu-navigation">
         @for(item of menuItems(); track $index ){
-            <button mat-button type="button" [routerLink]="`${item?.route}`" routerLinkActive="active">{{ item?.label }}</button>
+            <button class="nav-item" mat-button type="button" [routerLink]="`${item?.route}`" routerLinkActive="active">{{ item?.label }}</button>
         }
     </div>
 

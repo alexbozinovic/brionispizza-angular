@@ -20,7 +20,7 @@ export class DailyMenu {
   private fbase = inject(FirestoreService);
   protected menuStore = inject(MenuStore);
 
-  private menuRoutes = DailyMenuRoutes as any;
+  private menuRoutes = (DailyMenuRoutes as any).filter((r: any) => r.data?.label);
 
   private _menuItems = signal<{ label: string; route: string }[]>([]);
   protected menuItems = computed(() => this._menuItems());
