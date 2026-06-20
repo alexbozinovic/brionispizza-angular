@@ -30,7 +30,6 @@ export class PastaDishes implements OnInit {
 
   ngOnInit(): void {
     this.pastaDishes$.subscribe((data) => {
-      console.log(data);
       this._pastaDishes.set(data.items);
       this._pastaDescription.set(data.description);
       this.menuStore.setState({ breadcrumb: 'Pasta Dishes' });

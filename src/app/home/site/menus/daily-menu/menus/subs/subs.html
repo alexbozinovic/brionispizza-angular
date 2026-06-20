@@ -1,1 +1,15 @@
-<p>subs works!</p>
+<div class="subs-container">
+    @for(sub of subs(); track $index){
+        <div class="subs-item-row">
+            <div class="sub-item-label-wrapper">
+                <div class="sub-item-label">{{ sub.item }}</div>
+                <div class="sub-item-info">{{ sub.toppings }}</div>
+            </div>
+            <div class="sub-item-price">
+                @for(item of sub.info; track $index){
+                    <div class="sub-item-price">{{ item.price }}</div>
+                }
+            </div>
+        </div>
+    }
+</div>
